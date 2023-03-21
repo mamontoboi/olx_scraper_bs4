@@ -62,6 +62,6 @@ class SyncScraper:
                 print(f"Model: {description},\n\tprice: {price}, \n\tlocation: {location},\n\tposted on: {date}")
 
 
-async def sync_main():
+def sync_main():
     scraper = SyncScraper()
-    scraper.count_sync_pages()
+    scraper.get_data()
