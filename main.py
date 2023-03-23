@@ -1,4 +1,6 @@
-"""The module contains two functions, serving the same purpose: parsing of olx website. First """
+"""The module contains the main menu of UI of the parser.
+Allows user to choose method of parsing, sync and async, and select the initial url.
+"""
 
 import asyncio
 from async_parser import async_main

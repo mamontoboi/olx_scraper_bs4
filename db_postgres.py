@@ -1,10 +1,20 @@
+"""This module provides class DBManagement, and it's method for management of
+connection to PostgreSQL database."""
+
 import datetime
 import psycopg2
 
 
 class DBManagement:
+    """A class for managing a PostgreSQL database to store data from OLX."""
+
+    def __init__(self):
+        self.conn = None
+        self.curs = None
 
     def create_db(self):
+        """Creates the database if it doesn't exist."""
+
         try:
             self.conn = psycopg2.connect(
                 host="localhost",
@@ -30,6 +40,8 @@ class DBManagement:
                 self.conn.close()
 
     def create_table(self):
+        """Creates the "olx" table if it doesn't exist."""
+
         try:
             self.conn = psycopg2.connect(
                 host="localhost",
@@ -61,6 +73,8 @@ class DBManagement:
                 self.conn.close()
 
     def drop_table(self):
+        """Drops the "olx" table."""
+
         try:
             self.conn = psycopg2.connect(
                 host="localhost",
@@ -86,6 +100,8 @@ class DBManagement:
                 self.conn.close()
 
     def insert_values(self, values: list):
+        """Inserts values into the "olx" table."""
+
         try:
             self.conn = psycopg2.connect(
                 host="localhost",
@@ -116,14 +132,3 @@ class DBManagement:
         finally:
             if self.conn:
                 self.conn.close()
-
-    def __del__(self):
-        if self.curs:
-            self.curs.close()
-        if self.conn:
-            self.conn.close()
-
-
-
-
-
