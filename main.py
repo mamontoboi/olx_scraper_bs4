@@ -1,6 +1,5 @@
-"""The module contains the main menu of UI of the parser.
-Allows user to choose method of parsing, sync and async, and select the initial url.
-"""
+"""The module contains the main UI of the parser. It allows the user to
+ choose the method of parsing (sync and async) and select the initial URL."""
 
 import asyncio
 from async_parser import async_main
